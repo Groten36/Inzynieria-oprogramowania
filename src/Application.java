@@ -54,7 +54,25 @@ public class Application {
         }
 
     }
-    void login(){}
+    void login(){
+        String login,password;
+        Scanner in =new Scanner(System.in);
+        System.out.print("Podaj login:\n");
+        login=in.nextLine();
+        System.out.print("Podaj hasło: \n");
+        password=in.nextLine();
+        for(User u : ListOfUsers){
+            if(u.getLogName()==login){
+                if(u.getPassword()==password){
+                    
+                }
+            }
+            else{
+                System.out.print("Błędne dane!");
+
+            }
+        }
+    }
     void turnDevice(){
         int n;
         Scanner in=new Scanner(System.in);
@@ -67,8 +85,10 @@ public class Application {
                 }else{
                     i.setOn(true);
                 }
+                return;
             }
         }
+        System.out.print("Brak takiego urządzenia w systemie!");
 
     }
 }

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6fbb9c3a-8424-4b37-b655-aaf6d24fe3b7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Device.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Device.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="60" column="32" lean-forward="true" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
+            <state relative-caret-position="108">
+              <caret line="66" column="20" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -42,8 +42,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+            <state relative-caret-position="435">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+              <folding>
+                <element signature="e#126#127#0" expanded="true" />
+                <element signature="e#156#157#0" expanded="true" />
+                <element signature="e#199#200#0" expanded="true" />
+                <element signature="e#230#231#0" expanded="true" />
+                <element signature="e#129#130#0" expanded="true" />
+                <element signature="e#160#161#0" expanded="true" />
+                <element signature="e#208#209#0" expanded="true" />
+                <element signature="e#248#249#0" expanded="true" />
+                <element signature="e#128#129#0" expanded="true" />
+                <element signature="e#158#159#0" expanded="true" />
+                <element signature="e#204#205#0" expanded="true" />
+                <element signature="e#242#243#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -101,10 +115,10 @@
       <list>
         <option value="$PROJECT_DIR$/src/Camera.java" />
         <option value="$PROJECT_DIR$/src/MotionDetector.java" />
-        <option value="$PROJECT_DIR$/src/User.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Device.java" />
+        <option value="$PROJECT_DIR$/src/User.java" />
         <option value="$PROJECT_DIR$/src/Application.java" />
       </list>
     </option>
@@ -185,12 +199,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576669577297</updated>
-      <workItem from="1576669594079" duration="7835000" />
+      <workItem from="1576669594079" duration="8555000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7835000" />
+    <option name="totallyTimeSpent" value="8555000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -245,13 +259,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -275,10 +282,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#126#127#0" expanded="true" />
+            <element signature="e#156#157#0" expanded="true" />
+            <element signature="e#199#200#0" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+            <element signature="e#129#130#0" expanded="true" />
+            <element signature="e#160#161#0" expanded="true" />
+            <element signature="e#208#209#0" expanded="true" />
+            <element signature="e#248#249#0" expanded="true" />
+            <element signature="e#128#129#0" expanded="true" />
+            <element signature="e#158#159#0" expanded="true" />
+            <element signature="e#204#205#0" expanded="true" />
+            <element signature="e#242#243#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="60" column="32" lean-forward="true" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
+        <state relative-caret-position="108">
+          <caret line="66" column="20" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
