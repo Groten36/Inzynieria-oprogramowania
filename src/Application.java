@@ -14,12 +14,14 @@ public class Application {
         System.out.print("Wybierz opcje \n");
         System.out.print("1.Logowanie\n");
         System.out.print("2.Dodaj urzączenie\n");
-        System.out.print("3.Zmien stan urządzenia");
+        System.out.print("3.Zmien stan urządzenia\n");
+        System.out.print("4.Sprawdź stan urządzen\n");
         menu=in.nextInt();
         switch(menu){
             case 1: login();break;
             case 2: addDevice();break;
-            case 3: turnDevice();
+            case 3: turnDevice();break;
+            case 4: displayDevices();break;
         }
     }
     void addDevice(){
@@ -75,6 +77,7 @@ public class Application {
         }
     }
     void turnDevice(){
+
         int n;
         Scanner in=new Scanner(System.in);
         System.out.print("Podaj id urządzenia: \n");
@@ -91,5 +94,17 @@ public class Application {
         }
         System.out.print("Brak takiego urządzenia w systemie!");
 
+    }
+    void displayDevices(){
+        for(Device d : ListOfDevices){
+            System.out.print("ID: "+d.getId());
+            System.out.print("Stan: ");
+            if(d.isOn()){
+                System.out.print("Włączony");
+            }else{
+                System.out.print("Wyłączone");
+            }
+
+        }
     }
 }
