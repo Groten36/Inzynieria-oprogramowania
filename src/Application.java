@@ -19,6 +19,7 @@ public class Application {
         System.out.print("3.Zmien stan urządzenia\n");
         System.out.print("4.Sprawdź stan urządzen\n");
         System.out.print("5.Zmien hasło\n");
+        System.out.print("6.Zmien dane użytkownika\n");
         menu=in.nextInt();
         switch(menu){
             case 1: login();break;
@@ -129,5 +130,30 @@ public class Application {
             System.out.print("Różne hasła!");
         }
 
+    }
+
+    void updateUser(){
+        int menu;
+        String name;
+        Scanner in = new Scanner(System.in);
+        if(currentUser.isLogIn()){
+            System.out.print("Zmiana danych użytkownka:\n");
+            System.out.print("1.Imię\n");
+            System.out.print("2.Nazwisko");
+            menu=in.nextInt();
+            switch(menu){
+                case 1:System.out.print("Nowe imię: ");
+                name=in.nextLine();
+                currentUser.setFirstName(name);
+                System.out.print("\nImię zmienione");
+                case 2: System.out.print("\nNowe nazwisko: ");
+                name=in.nextLine();
+                currentUser.setLastName(name);
+                System.out.print("\nNazwisko zostało zmienione");
+
+            }
+
+
+        }
     }
 }
