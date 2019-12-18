@@ -20,6 +20,7 @@ public class Application {
         System.out.print("4.Sprawdź stan urządzen\n");
         System.out.print("5.Zmien hasło\n");
         System.out.print("6.Zmien dane użytkownika\n");
+        System.out.print("7.Dodaj użytkownika\n");
         menu=in.nextInt();
         switch(menu){
             case 1: login();break;
@@ -27,6 +28,7 @@ public class Application {
             case 3: turnDevice();break;
             case 4: displayDevices();break;
             case 5: changePassword();break;
+            case 6: updateUser();break;
         }
     }
     void addDevice(){
@@ -154,6 +156,29 @@ public class Application {
             }
 
 
+        }
+    }
+
+    void addUser(){
+        String firstName, lastName,login,pass1,pass2;
+        User newUser=null;
+        Scanner in=new Scanner(System.in);
+        System.out.print("Podaj Imię: \n");
+        firstName=in.nextLine();
+        System.out.print("Podaj nazwisko: \n");
+        lastName=in.nextLine();
+        System.out.print("Podaj login: \n");
+        login=in.nextLine();
+        System.out.print("Podaj hasło: \n");
+        pass1=in.nextLine();
+        System.out.print("Powtóż hasło: \n");
+        pass2=in.nextLine();
+        if(pass1.equals(pass2)){
+        newUser=new User(ListOfUsers.size(),firstName,lastName,login,pass1);
+        ListOfUsers.add(newUser);
+        System.out.print("Użytkownik dodany.");}
+        else{
+            System.out.print("Różne hasła!");
         }
     }
 }
