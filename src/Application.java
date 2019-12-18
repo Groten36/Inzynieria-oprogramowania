@@ -39,33 +39,39 @@ public class Application {
         int menu;
         String man,mod,loc;
         int a;
+        if(currentUser.equals("admin")){
         Camera camera=null;
         MotionDetector md=null;
         Scanner in=new Scanner(System.in);
-        System.out.print("Wybierz typ urządzenia:\n");
-        System.out.print("1.Kamera monitoringu\n");
-        System.out.print("2.Czujnik ruchu\n");
-        menu=in.nextInt();
-        switch(menu){
-            case 1:System.out.print("Podaj producenta: \n");
-                    man=in.nextLine();
+
+            System.out.print("Wybierz typ urządzenia:\n");
+            System.out.print("1.Kamera monitoringu\n");
+            System.out.print("2.Czujnik ruchu\n");
+            menu = in.nextInt();
+            switch (menu) {
+                case 1:
+                    System.out.print("Podaj producenta: \n");
+                    man = in.nextLine();
                     System.out.print("Podaj model: \n");
-                    mod=in.nextLine();
+                    mod = in.nextLine();
                     System.out.print("Podaj monitorowany obszar: \n");
-                    a=in.nextInt();
-                    camera=new Camera(ListOfDevices.size(),man,mod,a);
-                    ListOfDevices.add(camera);break;
-            case 2: System.out.print("Podaj producenta: \n");
-                man=in.nextLine();
-                System.out.print("Podaj model: \n");
-                mod=in.nextLine();
-                System.out.print("Podaj lokalizację: \n");
-                loc=in.nextLine();
-                md=new MotionDetector(ListOfDevices.size(),man,mod,loc);
-                ListOfDevices.add(md);break;
+                    a = in.nextInt();
+                    camera = new Camera(ListOfDevices.size(), man, mod, a);
+                    ListOfDevices.add(camera);
+                    break;
+                case 2:
+                    System.out.print("Podaj producenta: \n");
+                    man = in.nextLine();
+                    System.out.print("Podaj model: \n");
+                    mod = in.nextLine();
+                    System.out.print("Podaj lokalizację: \n");
+                    loc = in.nextLine();
+                    md = new MotionDetector(ListOfDevices.size(), man, mod, loc);
+                    ListOfDevices.add(md);
+                    break;
 
+            }
         }
-
     }
     void login(){
         String login,password;
@@ -164,6 +170,7 @@ public class Application {
     }
 
     void addUser(){
+        if(currentUser.type.equals( "admin")){
         String firstName, lastName,login,pass1,pass2;
         User newUser=null;
         Scanner in=new Scanner(System.in);
@@ -178,11 +185,14 @@ public class Application {
         System.out.print("Powtóż hasło: \n");
         pass2=in.nextLine();
         if(pass1.equals(pass2)){
-        newUser=new User(ListOfUsers.size(),firstName,lastName,login,pass1);
+        newUser=new User(ListOfUsers.size(),"user",firstName,lastName,login,pass1);
         ListOfUsers.add(newUser);
         System.out.print("Użytkownik dodany.");}
         else{
             System.out.print("Różne hasła!");
+        }}
+        else{
+            System.out.print("Brak uprawnień");
         }
     }
 }

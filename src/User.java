@@ -1,5 +1,8 @@
+
+
 public class User {
     int id;
+    String type;
     String firstName;
     String lastName;
     String password;
@@ -47,8 +50,9 @@ public class User {
     String logName;
     boolean isLogIn;
 
-    User(int id,String firstName,String lastName, String logName,String password){
+    User(int id,String type,String firstName,String lastName, String logName,String password){
         this.id=id;
+        this.type=type;
         this.firstName=firstName;
         this.lastName=lastName;
         this.logName=logName;
@@ -56,5 +60,6 @@ public class User {
         this.isLogIn=false;
 
     }
+
 
 }
