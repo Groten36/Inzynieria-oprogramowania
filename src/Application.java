@@ -64,7 +64,8 @@ public class Application {
         for(User u : ListOfUsers){
             if(u.getLogName()==login){
                 if(u.getPassword()==password){
-                    
+                    u.setLogIn(true);
+                    return;
                 }
             }
             else{
