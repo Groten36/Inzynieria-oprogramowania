@@ -4,9 +4,11 @@ import java.util.Scanner;
 public class Application {
     ArrayList<Device> ListOfDevices;
     ArrayList<User> ListOfUsers;
+    User currentUser;
     Application(){
         ListOfDevices=new ArrayList<Device>();
         ListOfUsers=new ArrayList<User>();
+        currentUser=null;
     }
     void launch(){
         int menu;
@@ -16,12 +18,14 @@ public class Application {
         System.out.print("2.Dodaj urzączenie\n");
         System.out.print("3.Zmien stan urządzenia\n");
         System.out.print("4.Sprawdź stan urządzen\n");
+        System.out.print("5.Zmien hasło\n");
         menu=in.nextInt();
         switch(menu){
             case 1: login();break;
             case 2: addDevice();break;
             case 3: turnDevice();break;
             case 4: displayDevices();break;
+            case 5: changePassword();break;
         }
     }
     void addDevice(){
@@ -67,6 +71,7 @@ public class Application {
             if(u.getLogName()==login){
                 if(u.getPassword()==password){
                     u.setLogIn(true);
+                    currentUser=u;
                     return;
                 }
             }
@@ -106,5 +111,23 @@ public class Application {
             }
 
         }
+    }
+
+    void changePassword(){
+        String old,pass1,pass2;
+        Scanner in=new Scanner(System.in);
+        System.out.print("POdaj hasło");
+        old=in.nextLine();
+        System.out.print("Podaj nowe haslo: \n");
+        pass1=in.nextLine();
+        System.out.print("Powtórz nowe hasło: \n");
+        pass2=in.nextLine();
+        if(pass1.equals(pass2)&& old.equals(currentUser.getPassword())){
+            currentUser.setPassword(pass1);
+            System.out.print("Hasło zostało zmienione");
+        }else{
+            System.out.print("Różne hasła!");
+        }
+
     }
 }
