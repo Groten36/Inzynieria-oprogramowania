@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Application {
     ArrayList<Device> ListOfDevices;
@@ -9,10 +10,12 @@ public class Application {
     }
     void launch(){
         int menu;
+        Scanner in = new Scanner(System.in);
         System.out.print("Wybierz opcje \n");
         System.out.print("1.Logowanie\n");
         System.out.print("2.Dodaj urzączenie\n");
         System.out.print("3.Zmien stan urządzenia");
+        menu=in.nextInt();
         switch(menu){
             case 1: login();break;
             case 2: addDevice();break;
@@ -20,11 +23,52 @@ public class Application {
         }
     }
     void addDevice(){
+        int menu;
+        String man,mod,loc;
+        int a;
+        Camera camera=null;
+        MotionDetector md=null;
+        Scanner in=new Scanner(System.in);
         System.out.print("Wybierz typ urządzenia:\n");
         System.out.print("1.Kamera monitoringu\n");
         System.out.print("2.Czujnik ruchu\n");
+        menu=in.nextInt();
+        switch(menu){
+            case 1:System.out.print("Podaj producenta: \n");
+                    man=in.nextLine();
+                    System.out.print("Podaj model: \n");
+                    mod=in.nextLine();
+                    System.out.print("Podaj monitorowany obszar: \n");
+                    a=in.nextInt();
+                    camera=new Camera(ListOfDevices.size(),man,mod,a);
+                    ListOfDevices.add(camera);break;
+            case 2: System.out.print("Podaj producenta: \n");
+                man=in.nextLine();
+                System.out.print("Podaj model: \n");
+                mod=in.nextLine();
+                System.out.print("Podaj lokalizację: \n");
+                loc=in.nextLine();
+                md=new MotionDetector(ListOfDevices.size(),man,mod,loc);
+                ListOfDevices.add(md);break;
+
+        }
 
     }
     void login(){}
-    void turnDevice(){}
+    void turnDevice(){
+        int n;
+        Scanner in=new Scanner(System.in);
+        System.out.print("Podaj id urządzenia: \n");
+        n=in.nextInt();
+        for(Device i : ListOfDevices){
+            if(i.getId()==n){
+                if(i.isOn()){
+                    i.setOn(false);
+                }else{
+                    i.setOn(true);
+                }
+            }
+        }
+
+    }
 }

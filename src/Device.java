@@ -2,6 +2,15 @@ public class Device {
     int id;
     String manufacturer;
     String model;
+
+    public boolean isOn() {
+        return isOn;
+    }
+
+    public void setOn(boolean on) {
+        isOn = on;
+    }
+
     boolean isOn;
 
     Device(){
@@ -11,7 +20,15 @@ public class Device {
         this.isOn=false;
     }
 
-    Device(int id, String manufacturer,String model){
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    Device(int id, String manufacturer, String model){
         this.id=id;
         this.manufacturer=manufacturer;
         this.model=model;
