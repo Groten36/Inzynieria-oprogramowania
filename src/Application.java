@@ -21,6 +21,7 @@ public class Application {
         System.out.print("5.Zmien hasło\n");
         System.out.print("6.Zmien dane użytkownika\n");
         System.out.print("7.Dodaj użytkownika\n");
+        System.out.print("0.Wyjdź");
         menu=in.nextInt();
         switch(menu){
             case 1: login();break;
@@ -29,6 +30,9 @@ public class Application {
             case 4: displayDevices();break;
             case 5: changePassword();break;
             case 6: updateUser();break;
+            case 7:addUser();break;
+            case 0: return;
+
         }
     }
     void addDevice(){
