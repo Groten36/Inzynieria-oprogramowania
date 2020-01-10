@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
 public class Application {
     ArrayList<Device> ListOfDevices;
     ArrayList<User> ListOfUsers;
@@ -28,8 +27,8 @@ public class Application {
             case 2: addDevice();break;
             case 3: turnDevice();break;
             case 4: displayDevices();break;
-            case 5: changePassword();break;
-            case 6: updateUser();break;
+            case 5: currentUser.changePassword();break;
+            case 6: currentUser.updateUser();break;
             case 7:addUser();break;
             case 0: return;
 
@@ -126,48 +125,10 @@ public class Application {
         }
     }
 
-    void changePassword(){
-        String old,pass1,pass2;
-        Scanner in=new Scanner(System.in);
-        System.out.print("POdaj hasło");
-        old=in.nextLine();
-        System.out.print("Podaj nowe haslo: \n");
-        pass1=in.nextLine();
-        System.out.print("Powtórz nowe hasło: \n");
-        pass2=in.nextLine();
-        if(pass1.equals(pass2)&& old.equals(currentUser.getPassword())){
-            currentUser.setPassword(pass1);
-            System.out.print("Hasło zostało zmienione");
-        }else{
-            System.out.print("Różne hasła!");
-        }
-
-    }
-
-    void updateUser(){
-        int menu;
-        String name;
-        Scanner in = new Scanner(System.in);
-        if(currentUser.isLogIn()){
-            System.out.print("Zmiana danych użytkownka:\n");
-            System.out.print("1.Imię\n");
-            System.out.print("2.Nazwisko");
-            menu=in.nextInt();
-            switch(menu){
-                case 1:System.out.print("Nowe imię: ");
-                name=in.nextLine();
-                currentUser.setFirstName(name);
-                System.out.print("\nImię zmienione");
-                case 2: System.out.print("\nNowe nazwisko: ");
-                name=in.nextLine();
-                currentUser.setLastName(name);
-                System.out.print("\nNazwisko zostało zmienione");
-
-            }
 
 
-        }
-    }
+
+
 
     void addUser(){
         if(currentUser.type.equals( "admin")){
